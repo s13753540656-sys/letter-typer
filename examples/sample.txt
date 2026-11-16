@@ -1,0 +1,2 @@
+Hello world! This is a public typing demonstration.
+Please test a few characters before continuing.

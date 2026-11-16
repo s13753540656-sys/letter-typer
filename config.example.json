@@ -1,0 +1,7 @@
+{
+  "countdownSeconds": 8,
+  "intervalMs": 70,
+  "testCharacters": 6,
+  "titleKeywords": ["批改", "pigai"],
+  "browserProcesses": ["msedge", "chrome", "firefox", "brave", "opera", "vivaldi"]
+}
