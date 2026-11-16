@@ -1,2 +1,2 @@
-0f257eef5980c226fd1a539a6d3f2d5d52a69a3b34985135fa96dd037cec052f  LetterTyper-1.0.0-source.zip
-010ec8be193571dc21760d96cf3c4184a930936218bd6e0cd65e4585280d6a42  LetterTyper-1.0.0-portable.zip
+a87feadd0915e14dcb9cb58c8d0fac3ad5edf6019c328ecbdc1e8a0fa1465ed3  LetterTyper-1.0.0-source.zip
+a483fb33bf0b80cedf830bed8ba9ad09ce520b019115093ffecb7766079e4fc4  LetterTyper-1.0.0-portable.zip
