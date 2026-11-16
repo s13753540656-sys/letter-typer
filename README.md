@@ -4,6 +4,12 @@ LetterTyper 是 Windows 桌面上的英文文本逐字录入工具。使用者�
 
 默认匹配标题包含“批改”或 `pigai` 的浏览器窗口，可用于尝试批改网的作文正文编辑页面。**窗口匹配不代表验证了网址；本版本尚未在真实登录网页完成端到端验证，必须先测试少量字符。** 本项目与批改网无隶属关系。
 
+## 第一次使用，从这里开始
+
+**不会写代码也可以按步骤操作：[打开零基础完整教程](docs/USAGE.md)。** 教程包含下载、解压、找到启动文件、准备文本、逐字录入、暂停续输和按现象排查问题。
+
+下载后，双击包里的 **“开始使用.html”** 可离线阅读同一份图文教程。第一次先在 `examples/practice.html` 本地练习页走完“测试 → 确认 → 继续”，无需登录或操作真实文章。
+
 ## 功能
 
 - 从本机选择 `.txt` 文件；默认内容只有公开示例，不含任何作文或学生信息。
@@ -23,9 +29,12 @@ LetterTyper 是 Windows 桌面上的英文文本逐字录入工具。使用者�
 
 下载：[便携运行包](https://github.com/s13753540656-sys/letter-typer/raw/refs/heads/main/downloads/LetterTyper-1.0.0-portable.zip) · [完整源码包](https://github.com/s13753540656-sys/letter-typer/raw/refs/heads/main/downloads/LetterTyper-1.0.0-source.zip) · [SHA-256 校验文件](https://github.com/s13753540656-sys/letter-typer/blob/main/downloads/SHA256SUMS.txt)
 
-1. 下载 `LetterTyper-1.0.0-portable.zip`，**完整解压**到一个普通目录。不要在 ZIP 预览中直接运行。
-2. 使用 Windows 10/11 交互桌面，确保 Windows PowerShell 5.1 和 .NET Framework 4.8 可用。
-3. 双击 `start.cmd`。它使用系统自带 PowerShell 在本机编译随包 C# 源码，然后打开界面。首次启动可能需要几秒。
+1. 在 Windows 10/11 电脑上下载 `LetterTyper-1.0.0-portable.zip`。
+2. 右键 ZIP 选择“全部解压缩/全部提取”，打开解压目录；若只有一个内层文件夹，再进入一次。不要在 ZIP 预览中运行。
+3. 双击“开始使用.html”阅读教程，再双击 `start.cmd` 打开工具；若扩展名隐藏，它可能显示为 `start`。
+4. 打开 `examples/practice.html`，保留工具默认两行示例，按照教程先完成本地练习。成功后再选择自己的英文文件。
+
+电脑需有 Windows PowerShell 5.1 和 .NET Framework 4.8。`start.cmd` 使用系统 PowerShell 在本机编译随包 C# 源码，再打开界面，首次启动可能需要几秒。
 
 无需 Python、Node.js、Visual Studio、浏览器插件、账号连接或管理员权限。运行包包含 C# 源码，**并非不依赖系统环境的单个 EXE**。源码包也可按同样方式启动，额外包含打包和验证脚本。
 
@@ -33,7 +42,7 @@ LetterTyper 是 Windows 桌面上的英文文本逐字录入工具。使用者�
 
 ## 使用步骤
 
-1. 准备 UTF-8 英文 `.txt`，点击“选择本机文本”。可把自己的文件放在被 Git 忽略的 `data/` 中。
+1. 先完成[新手教程中的本地练习](docs/USAGE.md)。随后用记事本另存自己的 UTF-8 英文 `.txt`，在工具中点击“选择本机文本”。不要直接选择 Word 或 PDF。
 2. 打开允许录入的目标页面，登录操作由你自行完成；切换为英文输入法。
 3. 点击“测试前 6 个字符”，倒计时内点击网页的多行正文框。查看工具显示的预期文字，`␠` 表示空格，`↵` 表示换行。
 4. 确认网页文字正确后，返回工具，勾选测试确认，再点“继续输入”；倒计时内把光标放到刚才文字的末尾。
@@ -68,10 +77,14 @@ LetterTyper 是 Windows 桌面上的英文文本逐字录入工具。使用者�
 LetterTyper/
 ├─ LetterTyper.cs             # 界面、输入会话、窗口检查和自检
 ├─ start.cmd                  # 双击启动
+├─ 开始使用.html               # 双击离线阅读完整图文教程
+├─ 使用前先看.txt              # 新手入口提示
 ├─ verify.cmd                 # 无键盘事件的自动检查
 ├─ package.cmd                # 源码包中提供：创建发布 ZIP
 ├─ config.example.json        # 不含凭据的示例配置
-├─ examples/sample.txt        # 公开演示内容
+├─ examples/
+│  ├─ sample.txt              # 公开演示内容
+│  └─ practice.html           # 不登录、不保存的本地输入练习
 ├─ docs/
 │  ├─ USAGE.md                # 详细教程和常见问题
 │  ├─ PRIVACY.md              # 数据与权限

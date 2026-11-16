@@ -3,16 +3,17 @@ $ErrorActionPreference = 'Stop'
 $rootPath = (Resolve-Path -LiteralPath $Root).Path
 $version = [IO.File]::ReadAllText((Join-Path $rootPath 'VERSION')).Trim()
 if ($version -notmatch '^\d+\.\d+\.\d+$') { throw 'Invalid VERSION.' }
+& ([scriptblock]::Create([IO.File]::ReadAllText((Join-Path $rootPath 'scripts\BuildGuide.ps1'), [Text.Encoding]::UTF8))) -Root $rootPath
 
 # Explicit release manifests: never enumerate the workspace or private inputs.
 $portableFiles = @(
     'LetterTyper.cs', 'start.cmd', 'verify.cmd', 'config.example.json',
-    'examples/sample.txt', 'README.md', 'LICENSE', 'VERSION',
+    'examples/sample.txt', 'examples/practice.html', '开始使用.html', '使用前先看.txt', 'README.md', 'LICENSE', 'VERSION',
     'THIRD_PARTY_NOTICES.md', 'DEPENDENCIES.md',
-    'docs/USAGE.md', 'docs/PRIVACY.md', 'docs/VALIDATION.md', 'docs/images/window.png'
+    'docs/USAGE.md', 'docs/PRIVACY.md', 'docs/VALIDATION.md', 'docs/images/window.png', 'docs/images/practice.png'
 )
 $sourceFiles = $portableFiles + @('.gitignore', 'CHANGELOG.md', 'docs/GITHUB.md', 'package.cmd',
-    'scripts/Package.ps1', 'scripts/Capture.ps1', 'scripts/KeyboardSmoke.ps1', 'tests/KeyboardSmoke.cs')
+    'scripts/Package.ps1', 'scripts/BuildGuide.ps1', 'scripts/Capture.ps1', 'scripts/KeyboardSmoke.ps1', 'tests/KeyboardSmoke.cs')
 Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $outputDir = Join-Path $rootPath 'dist'
